@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit</title>
+</head>
+
+<body>
+    <style>
+        label{
+            display: inline-block;
+            width: 45%;
+        }
+        input{
+            width: 45%;
+            padding: 5px;
+        }
+        button{
+            background-color: blue;
+            color: white;
+            width: 25%;
+            padding: 5px;
+            margin-top: 5px
+        }
+    </style>
+    <a href="/listing">Listings</a>
+    <form action="#" method="post">
+        {% csrf_token %}
+        <label for="">Name</label>        
+        <input type="text" name="name" value="{{Data.name}}" required>
+        <label for="">Ticker</label>
+        <input type="text" name="ticker" value="{{Data.ticker}}" required>
+        <label for="">Exchange</label>
+        <input type="text" name="stock_exchange" value="{{Data.stock_exchange}}" required>
+        <label for="">Price</label>
+        <input type="number" name="price" value="{{Data.price}}" required>
+        <button type="submit">Update</button>
+    </form>
+</body>
+
+</html>

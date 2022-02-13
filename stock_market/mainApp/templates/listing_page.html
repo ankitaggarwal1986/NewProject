@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stock Market | Listings</title>
+    <h1>Listed Stocks</h1>
+    <button type="submit"><a href="/signout">Sign Out</a></button>
+</head>
+<body>
+    <table>
+        <tr>
+            <th>ID</th>
+            <th>NAME</th>
+            <th>TICKER</th>
+            <th>EXCHANGE</th>
+            <th>PRICE</th>
+        </tr>
+        {% for i in Data %}
+        <tr>
+            <td>{{i.id}}</td>
+            <td>{{i.name}}</td>
+            <td>{{i.ticker}}</td>
+            <td>{{i.stock_exchange}}</td>
+            <td>{{i.price}}</td>
+            <td><a href="/edit/{{i.id}}">Edit</a></td>
+            <td><a href="/delete/{{i.id}}">Delete</a></td>
+            <td><a href="{{i.get_stock_detail_url}}">Detail</a></td>
+        </tr>
+        {% endfor %}
+    </table>
+    <button type="submit"><a class="button" href="/add">Add More</a></button>
+</body>
+</html>
