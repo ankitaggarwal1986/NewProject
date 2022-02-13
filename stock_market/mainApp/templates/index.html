@@ -1,0 +1,25 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {%  block title%}
+    <title>Stock Market | Home</title>
+    <h1>Welcome To Stock Market</h1>
+    {% endblock %}
+</head>
+<body>
+
+    {% if user.is_authenticated %}
+    <h3>Hello,{{i.fname}}</h3>
+    <h3>You have successfully logged in</h3>
+    <button type="submit"><a href="/signout">Sign Out</a></button>
+    <button type="submit"><a href="/listing">Listing</a></button>
+    {% else %}
+    <button type="submit"><a href="/signin">Sign In</a></button>
+    <button type="submit"><a href="/signup">Sign Up</a></button>
+    {% endif %}
+</body>
+</html>
